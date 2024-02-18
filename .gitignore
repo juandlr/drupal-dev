@@ -1,3 +1,5 @@
 /vendor
 /web/sites/default/files/php
 /.idea/commandlinetools
+/.idea
+/web/sites/default/files
