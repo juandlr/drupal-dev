@@ -3,6 +3,7 @@
 namespace Drupal\products\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
+use Drupal\Core\Url;
 
 /**
  * Defines the Importer entity.
@@ -40,7 +41,8 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *     "url",
  *     "plugin",
  *     "update_existing",
- *     "source"
+ *     "source",
+ *     "bundle"
  *   }
  * )
  */
@@ -121,4 +123,11 @@ class Importer extends ConfigEntityBase implements ImporterInterface {
   public function getSource() {
     return $this->source;
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getBundle() {
+    return $this->bundle;
+}
 }

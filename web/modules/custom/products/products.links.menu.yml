@@ -12,8 +12,9 @@ entity.importer.collection:
   parent: system.admin_structure
   weight: 99
 
-entity.product_type.add_form:
-  route_name: 'entity.product_type.add_form'
-  title: 'Add Product type'
-  appears_on:
-    - entity.product_type.collection
+entity.product_type.collection:
+  title: 'Product types'
+  route_name: entity.product_type.collection
+  description: 'List Product bundles'
+  parent: system.admin_structure
+  weight: 99

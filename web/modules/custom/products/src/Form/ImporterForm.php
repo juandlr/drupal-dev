@@ -3,6 +3,7 @@
 namespace Drupal\products\Form;
 
 use Drupal\Core\Entity\EntityForm;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Url;
@@ -29,9 +30,14 @@ class ImporterForm extends EntityForm {
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger.
    */
-  public function __construct(ImporterManager $importerManager, MessengerInterface $messenger) {
+  public function __construct(
+    ImporterManager $importerManager,
+    MessengerInterface $messenger,
+    EntityTypeManagerInterface $entityTypeManager
+  ) {
     $this->importerManager = $importerManager;
     $this->messenger = $messenger;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
@@ -107,6 +113,20 @@ class ImporterForm extends EntityForm {
       '#title' => $this->t('Source'),
       '#description' => $this->t('The source of the products.'),
       '#default_value' => $importer->getSource(),
+    ];
+
+    $form['bundle'] = [
+      '#type' => 'entity_autocomplete',
+      '#target_type' => 'product_type',
+      '#title' => $this->t('Product type'),
+      '#default_value' => $importer->getBundle(
+      ) ? $this->entityTypeManager->getStorage('product_type')->load(
+        $importer->getBundle()
+      ) : NULL,
+      '#description' => $this->t(
+        'The type of products that need to be created.'
+      ),
+      '#required' => TRUE,
     ];
 
     return $form;
