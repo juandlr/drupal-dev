@@ -14,4 +14,12 @@ otherwise. *
 * @return bool
    */
   public function import();
+
+  /**
+   * Returns the Importer configuration entity.
+   *
+   * @return \Drupal\products\Entity\ImporterInterface
+   *   The importer config.
+   */
+  public function getConfig();
 }

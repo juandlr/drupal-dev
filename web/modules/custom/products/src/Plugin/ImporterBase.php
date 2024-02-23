@@ -75,4 +75,11 @@ abstract class ImporterBase extends PluginBase implements
     );
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getConfig() {
+    return $this->configuration['config'];
+  }
+
 }

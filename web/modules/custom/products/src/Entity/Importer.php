@@ -129,5 +129,7 @@ class Importer extends ConfigEntityBase implements ImporterInterface {
    */
   public function getBundle() {
     return $this->bundle;
-}
+  }
+
+
 }
