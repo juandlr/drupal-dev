@@ -1,0 +1,1431 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template in this directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.highlighted: Items for the highlighted content region.
+ * - page.help: Dynamic help text, mostly for admin pages.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.footer: Items for the footer region.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+<div class="layout-container">
+
+  <div id="wrap_all" style="min-height: 875px;">
+
+
+    <header id="header"
+            class="all_colors header_color light_bg_color av_header_left av_header_sidebar av_conditional_sticky"
+            role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+
+      <div id="header_main" class="container_wrap container_wrap_logo">
+
+        <div class="container av-logo-container">
+          <div class="inner-container">
+            {{ page.header }}
+            <nav class="main_menu" data-selectname="Select a page" role="navigation" itemscope="itemscope"
+                 itemtype="https://schema.org/SiteNavigationElement">
+              <div class="avia-menu av-main-nav-wrap">
+                <ul id="avia-menu" class="menu av-main-nav">
+                  <li
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-mega-parent menu-item-top-level menu-item-top-level-1 current-menu-item">
+                    <a href="#products" itemprop="url"><span class="avia-bullet"></span><span class="avia-menu-text">Products</span><span
+                        class="avia-menu-fx"><span class="avia-arrow-wrap"><span
+                            class="avia-arrow"></span></span></span></a></li>
+                  <li
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-top-level menu-item-top-level-2">
+                    <a href="#features" itemprop="url"><span class="avia-bullet"></span><span class="avia-menu-text">Features</span><span
+                        class="avia-menu-fx"><span class="avia-arrow-wrap"><span
+                            class="avia-arrow"></span></span></span></a></li>
+                  <li
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-top-level menu-item-top-level-3">
+                    <a href="#benefits" itemprop="url"><span class="avia-bullet"></span><span class="avia-menu-text">Benefits</span><span
+                        class="avia-menu-fx"><span class="avia-arrow-wrap"><span
+                            class="avia-arrow"></span></span></span></a></li>
+                  <li
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-top-level menu-item-top-level-4">
+                    <a href="#industries" itemprop="url"><span class="avia-bullet"></span><span class="avia-menu-text">Use cases</span><span
+                        class="avia-menu-fx"><span class="avia-arrow-wrap"><span
+                            class="avia-arrow"></span></span></span></a></li>
+                  <li
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-top-level menu-item-top-level-5">
+                    <a href="#team" itemprop="url"><span class="avia-bullet"></span><span class="avia-menu-text">Our team</span><span
+                        class="avia-menu-fx"><span class="avia-arrow-wrap"><span
+                            class="avia-arrow"></span></span></span></a></li>
+                  <li
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-top-level menu-item-top-level-6">
+                    <a href="#partners" itemprop="url"><span class="avia-bullet"></span><span class="avia-menu-text">Our partners</span><span
+                        class="avia-menu-fx"><span class="avia-arrow-wrap"><span
+                            class="avia-arrow"></span></span></span></a></li>
+                  <li
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-top-level menu-item-top-level-7">
+                    <a href="#news" itemprop="url"><span class="avia-bullet"></span><span
+                        class="avia-menu-text">News</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span
+                            class="avia-arrow"></span></span></span></a></li>
+                  <li id="menu-item-144"
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-top-level menu-item-top-level-8">
+                    <a href="#contact" itemprop="url"><span class="avia-bullet"></span><span class="avia-menu-text">Contact</span><span
+                        class="avia-menu-fx"><span class="avia-arrow-wrap"><span
+                            class="avia-arrow"></span></span></span></a></li>
+                  <li
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-top-level menu-item-top-level-9">
+                    <a target="_blank" href="https://regify.secourriel.com/phpDownloads.php?lg=EN" itemprop="url"><span
+                        class="avia-bullet"></span><span class="avia-menu-text">Downloads</span><span
+                        class="avia-menu-fx"><span class="avia-arrow-wrap"><span
+                            class="avia-arrow"></span></span></span></a></li>
+                  <li class="av-burger-menu-main menu-item-avia-special ">
+                    <a href="#">
+							<span class="av-hamburger av-hamburger--spin av-js-hamburger">
+					        <span class="av-hamburger-box">
+						          <span class="av-hamburger-inner"></span>
+						          <strong>Menu</strong>
+					        </span>
+							</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="av-burger-overlay" style="display: none; opacity: 0;">
+                  <div class="av-burger-overlay-scroll">
+                    <div class="av-burger-overlay-inner">
+                      <ul id="av-burger-menu-ul" class="" style="padding: 81px 0px;">
+                        <li class="menu-item-143 av-active-burger-items"><a href="#products" itemprop="url"
+                                                                            style=""><span
+                              class="avia-bullet"></span><span class="avia-menu-text">Products</span><span
+                              class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+                        </li>
+                        <li class="menu-item-142 av-active-burger-items"><a href="#features" itemprop="url"
+                                                                            style=""><span
+                              class="avia-bullet"></span><span class="avia-menu-text">Features</span><span
+                              class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+                        </li>
+                        <li class="menu-item-156 av-active-burger-items"><a href="#benefits" itemprop="url"
+                                                                            style=""><span
+                              class="avia-bullet"></span><span class="avia-menu-text">Benefits</span><span
+                              class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+                        </li>
+                        <li class="menu-item-155 av-active-burger-items"><a href="#industries" itemprop="url"
+                                                                            style=""><span
+                              class="avia-bullet"></span><span class="avia-menu-text">Use cases</span><span
+                              class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+                        </li>
+                        <li class="menu-item-625 av-active-burger-items"><a href="#team" itemprop="url" style=""><span
+                              class="avia-bullet"></span><span class="avia-menu-text">Our team</span><span
+                              class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+                        </li>
+                        <li class="menu-item-710 av-active-burger-items"><a href="#partners" itemprop="url"
+                                                                            style=""><span
+                              class="avia-bullet"></span><span class="avia-menu-text">Our partners</span><span
+                              class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+                        </li>
+                        <li class="menu-item-773 av-active-burger-items"><a href="#news" itemprop="url" style=""><span
+                              class="avia-bullet"></span><span class="avia-menu-text">News</span><span
+                              class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+                        </li>
+                        <li class="menu-item-144 av-active-burger-items"><a href="#contact" itemprop="url"
+                                                                            style=""><span
+                              class="avia-bullet"></span><span class="avia-menu-text">Contact</span><span
+                              class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+                        </li>
+                        <li class="menu-item-701 av-active-burger-items"><a target="_blank"
+                                                                            href="https://regify.secourriel.com/phpDownloads.php?lg=EN"
+                                                                            itemprop="url" style=""><span
+                              class="avia-bullet"></span><span class="avia-menu-text">Downloads</span><span
+                              class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="av-burger-overlay-bg"></div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- end container_wrap-->
+      </div>
+
+      <div class="header_bg"></div>
+
+      <!-- end header -->
+    </header>
+
+    <div id="main" class="all_colors" data-scroll-offset="0">
+
+      <div id="full_slider_1"
+           class="avia-fullwidth-slider main_color avia-shadow   avia-builder-el-0  el_before_av_section  avia-builder-el-first  container_wrap fullsize">
+        <div data-size="no scaling" data-lightbox_size="large" data-animation="fade" data-ids="349"
+             data-video_counter="0" data-autoplay="false" data-bg_slider="false" data-slide_height=""
+             data-handle="av_slideshow_full" data-interval="5" data-class=" " data-css_id="" data-scroll_down=""
+             data-control_layout="av-control-default" data-custom_markup="" data-perma_caption=""
+             data-autoplay_stopper="" data-image_attachment="" data-min_height="450px" data-src=""
+             data-position="top left" data-repeat="stretch" data-attach="scroll" data-stretch=""
+             class="avia-slideshow avia-slideshow-1 av-control-default avia-slideshow-no scaling av_slideshow_full avia-fade-slider"
+             itemprop="ImageObject" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+          <ul class="avia-slideshow-inner"
+              style="padding: 0px; height: 660px; transition: none 0s ease 0s; transform: translateZ(0px);">
+            <li class="av-single-slide slide-1 active-slide"
+                style="visibility: visible; opacity: 1; transition: none 0s ease 0s; transform: translateZ(0px);">
+              <div data-rel="slideshow-1" class="avia-slide-wrap">
+                <div class="caption_fullwidth av-slideshow-caption caption_center">
+                  <div class="container caption_container">
+                    <div class="slideshow_caption">
+                      <div class="slideshow_inner_caption">
+                        <div class="slideshow_align_caption">
+                          <div class="avia-caption-content  av_inherit_color" itemprop="description"
+                               style="font-size:40px; color:#fff; "><p>We deliver the gold standard<br> of Trusted
+                              Digital
+                              Collaboration</p>
+                          </div>
+                          <a href="https://regify.secourriel.com/phpLogin.php?lg=EN" target="_blank"
+                             class="avia-slideshow-button avia-button avia-color-light avia-multi-slideshow-button"
+                             data-duration="800" data-easing="easeInOutQuad">LOGIN / SIGN UP</a><a
+                            href="mailto:enquiries@secourriel.com"
+                            class="avia-slideshow-button avia-button avia-color-light avia-multi-slideshow-button avia-slideshow-button-2"
+                            data-duration="800" data-easing="easeInOutQuad">Contact us</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/secourriel-secure-messaging-1.jpg"
+                  width="1700" height="1126" title="secourriel-secure-messaging" alt="Secourriel - secure messaging"
+                  itemprop="thumbnailUrl" style="min-height: 450px; min-width: 680px; left: 0px;"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="av_section_1"
+           class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-1  el_after_av_slideshow_full  el_before_av_section   container_wrap fullsize"
+           style="background-color: #3a4d5c; ">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><h4 style="text-align: center;"><span
+                        style="color: #fff;">Secourriel is a cybersecurity Cloud Service Provider for secure email, workflows and file sharing</span>
+                    </h4>
+                  </div>
+                </section>
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="products"
+           class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll  avia-builder-el-3  el_after_av_section  el_before_av_section   container_wrap fullsize">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><h2 style="text-align: center;">Products</h2>
+                  </div>
+                </section>
+                <div style=" margin-top:0; margin-bottom:30px;"
+                     class="hr hr-custom hr-center hr-icon-no   avia-builder-el-5  el_after_av_textblock  el_before_av_textblock ">
+                  <span class="hr-inner   inner-border-av-border-fat" style=" width:60px; border-color:#738da9;"><span
+                      class="hr-inner-style"></span></span></div>
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><p style="text-align: center;">Our portfolio covers
+                      plug’n’play secure email, cloud collaboration, document workflow – and much more</p>
+                  </div>
+                </section>
+                <div style="height:50px"
+                     class="hr hr-invisible   avia-builder-el-7  el_after_av_textblock  el_before_av_one_fourth "><span
+                    class="hr-inner "><span class="hr-inner-style"></span></span></div>
+                <div class="flex_column_table av-equal-height-column-flextable -flextable">
+                  <div
+                    class="flex_column av_one_fourth  flex_column_table_cell av-equal-height-column av-align-top first  avia-builder-el-8  el_after_av_hr  el_before_av_one_fourth  "
+                    style="border-width:1px; border-style:solid; padding:15px 15px 20px 15px ; border-radius:5px; ">
+                    <div
+                      class="avia-image-container  av-styling-    avia-builder-el-9  el_before_av_hr  avia-builder-el-first  avia-align-center "
+                      itemprop="ImageObject" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+                      <div class="avia-image-container-inner"><img class="avia_image "
+                                                                   src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/regimail.png"
+                                                                   alt="" title="regimail" itemprop="thumbnailUrl">
+                      </div>
+                    </div>
+                    <div style=" margin-top:0; margin-bottom:30px;"
+                         class="hr hr-custom hr-center hr-icon-yes   avia-builder-el-10  el_after_av_image  el_before_av_heading ">
+                      <span class="hr-inner   inner-border-av-border-thin" style=" width:50px;"><span
+                          class="hr-inner-style"></span></span><span class="av-seperator-icon" aria-hidden="true"
+                                                                     data-av_icon=""
+                                                                     data-av_iconfont="entypo-fontello"></span><span
+                        class="hr-inner   inner-border-av-border-thin" style=" width:50px;"><span
+                          class="hr-inner-style"></span></span></div>
+                    <div style="padding-bottom:10px;"
+                         class="av-special-heading av-special-heading-h3 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-11  el_after_av_hr  avia-builder-el-last   ">
+                      <h3 class="av-special-heading-tag " itemprop="headline">REGIMAIL</h3>
+                      <div class="av-subheading av-subheading_below  " style="font-size:18px;"><p>Easy-to-use secure
+                          email
+                          solution</p>
+                      </div>
+                      <div class="special-heading-border">
+                        <div class="special-heading-inner-border"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="av-flex-placeholder"></div>
+                  <div
+                    class="flex_column av_one_fourth  flex_column_table_cell av-equal-height-column av-align-top   avia-builder-el-12  el_after_av_one_fourth  el_before_av_one_fourth  "
+                    style="border-width:1px; border-style:solid; padding:15px 15px 20px 15px ; border-radius:5px; ">
+                    <div
+                      class="avia-image-container  av-styling-    avia-builder-el-13  el_before_av_hr  avia-builder-el-first  avia-align-center "
+                      itemprop="ImageObject" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+                      <div class="avia-image-container-inner"><img class="avia_image "
+                                                                   src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/regibox.png"
+                                                                   alt="" title="regibox" itemprop="thumbnailUrl"></div>
+                    </div>
+                    <div style=" margin-top:0; margin-bottom:30px;"
+                         class="hr hr-custom hr-center hr-icon-yes   avia-builder-el-14  el_after_av_image  el_before_av_heading ">
+                      <span class="hr-inner   inner-border-av-border-thin" style=" width:50px;"><span
+                          class="hr-inner-style"></span></span><span class="av-seperator-icon" aria-hidden="true"
+                                                                     data-av_icon=""
+                                                                     data-av_iconfont="entypo-fontello"></span><span
+                        class="hr-inner   inner-border-av-border-thin" style=" width:50px;"><span
+                          class="hr-inner-style"></span></span></div>
+                    <div style="padding-bottom:10px;"
+                         class="av-special-heading av-special-heading-h3 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-15  el_after_av_hr  avia-builder-el-last   ">
+                      <h3 class="av-special-heading-tag " itemprop="headline">REGIBOX</h3>
+                      <div class="av-subheading av-subheading_below  " style="font-size:18px;"><p>Securely sharing and
+                          storing documents via an auditable e-box</p>
+                      </div>
+                      <div class="special-heading-border">
+                        <div class="special-heading-inner-border"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="av-flex-placeholder"></div>
+                  <div
+                    class="flex_column av_one_fourth  flex_column_table_cell av-equal-height-column av-align-top   avia-builder-el-16  el_after_av_one_fourth  el_before_av_one_fourth  "
+                    style="border-width:1px; border-style:solid; padding:15px 15px 20px 15px ; border-radius:5px; ">
+                    <div
+                      class="avia-image-container  av-styling-    avia-builder-el-17  el_before_av_hr  avia-builder-el-first  avia-align-center "
+                      itemprop="ImageObject" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+                      <div class="avia-image-container-inner"><img class="avia_image "
+                                                                   src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/documents-flow.png"
+                                                                   alt="" title="documents-flow"
+                                                                   itemprop="thumbnailUrl">
+                      </div>
+                    </div>
+                    <div style=" margin-top:0; margin-bottom:30px;"
+                         class="hr hr-custom hr-center hr-icon-yes   avia-builder-el-18  el_after_av_image  el_before_av_heading ">
+                      <span class="hr-inner   inner-border-av-border-thin" style=" width:50px;"><span
+                          class="hr-inner-style"></span></span><span class="av-seperator-icon" aria-hidden="true"
+                                                                     data-av_icon=""
+                                                                     data-av_iconfont="entypo-fontello"></span><span
+                        class="hr-inner   inner-border-av-border-thin" style=" width:50px;"><span
+                          class="hr-inner-style"></span></span></div>
+                    <div style="padding-bottom:10px;"
+                         class="av-special-heading av-special-heading-h3 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-19  el_after_av_hr  avia-builder-el-last   ">
+                      <h3 class="av-special-heading-tag " itemprop="headline">DOCUMENT WORKFLOWS</h3>
+                      <div class="av-subheading av-subheading_below  " style="font-size:18px;"><p>Secured and legally
+                          compliant delivery of payroll documents, statements, transport bills, invoices, etc. by
+                          email</p>
+                      </div>
+                      <div class="special-heading-border">
+                        <div class="special-heading-inner-border"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="av-flex-placeholder"></div>
+                  <div
+                    class="flex_column av_one_fourth  flex_column_table_cell av-equal-height-column av-align-top   avia-builder-el-20  el_after_av_one_fourth  el_before_av_one_fourth  "
+                    style="border-width:1px; border-style:solid; padding:15px 15px 20px 15px ; border-radius:5px; ">
+                    <div
+                      class="avia-image-container  av-styling-    avia-builder-el-21  el_before_av_hr  avia-builder-el-first  avia-align-center "
+                      itemprop="ImageObject" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+                      <div class="avia-image-container-inner"><img class="avia_image "
+                                                                   src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/regigate.png"
+                                                                   alt="" title="regigate" itemprop="thumbnailUrl">
+                      </div>
+                    </div>
+                    <div style=" margin-top:0; margin-bottom:30px;"
+                         class="hr hr-custom hr-center hr-icon-yes   avia-builder-el-22  el_after_av_image  el_before_av_heading ">
+                      <span class="hr-inner   inner-border-av-border-thin" style=" width:50px;"><span
+                          class="hr-inner-style"></span></span><span class="av-seperator-icon" aria-hidden="true"
+                                                                     data-av_icon=""
+                                                                     data-av_iconfont="entypo-fontello"></span><span
+                        class="hr-inner   inner-border-av-border-thin" style=" width:50px;"><span
+                          class="hr-inner-style"></span></span></div>
+                    <div style="padding-bottom:10px;"
+                         class="av-special-heading av-special-heading-h3 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-23  el_after_av_hr  avia-builder-el-last   ">
+                      <h3 class="av-special-heading-tag " itemprop="headline">REGIGATE</h3>
+                      <div class="av-subheading av-subheading_below  " style="font-size:18px;"><p>Server
+                          based enterprise grade services integrating seamlessly into existing
+                          gateway technologies in an efficient, all-in-one solution, no desktop
+                          software required anymore. Central business rules engine.</p>
+                      </div>
+                      <div class="special-heading-border">
+                        <div class="special-heading-inner-border"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!--close column table wrapper. Autoclose: 1 -->
+                <div
+                  class="flex_column av_one_fourth  flex_column_div av-zero-column-padding first  avia-builder-el-24  el_after_av_one_fourth  el_before_av_one_half  column-top-margin"
+                  style="border-radius:0px; "></div>
+                <div
+                  class="flex_column av_one_half  flex_column_div av-zero-column-padding   avia-builder-el-25  el_after_av_one_fourth  el_before_av_one_fourth  column-top-margin"
+                  style="border-radius:0px; ">
+                  <div
+                    class="avia-image-container  av-styling-    avia-builder-el-26  avia-builder-el-no-sibling  avia-align-center "
+                    itemprop="ImageObject" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+                    <div class="avia-image-container-inner"><img class="avia_image "
+                                                                 src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/systems.png"
+                                                                 alt="" title="systems" itemprop="thumbnailUrl"></div>
+                  </div>
+                </div>
+                <div
+                  class="flex_column av_one_fourth  flex_column_div av-zero-column-padding   avia-builder-el-27  el_after_av_one_half  avia-builder-el-last  column-top-margin"
+                  style="border-radius:0px; "></div>
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="av_section_3"
+           class="avia-section main_color avia-section-huge avia-no-border-styling av-parallax-section avia-bg-style-parallax  avia-builder-el-28  el_after_av_section  el_before_av_section   container_wrap fullsize"
+           data-section-bg-repeat="no-repeat">
+        <div class="av-parallax active-parallax enabled-parallax enabled-parallax " data-avia-parallax-ratio="0.3"
+             style="top: auto; transform: translate3d(0px, 30px, 0px); height: 638px;">
+          <div class="av-parallax-inner main_color  avia-full-stretch"
+               style="background-repeat: no-repeat; background-image: url(https://w3.secourriel.com/wp-content/uploads/2016/02/secourriel-secure-messaging-about.jpg); background-attachment: scroll; background-position: top left; "></div>
+        </div>
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <div
+                  class="flex_column av_one_full  flex_column_div first  avia-builder-el-29  avia-builder-el-no-sibling  "
+                  style="margin-top:0px; border-radius:0px; ">
+                  <div style="padding-bottom:0px;color:#fff;"
+                       class="av-special-heading av-special-heading-h4 custom-color-heading blockquote modern-quote modern-centered  avia-builder-el-30  avia-builder-el-no-sibling  ">
+                    <h4 class="av-special-heading-tag " itemprop="headline">This service is highly customised for the
+                      financial industry and fully compliant with EU and Luxembourg specific regulation<br> (e.g. CSSF
+                      and
+                      CNPD).</h4>
+                    <div class="special-heading-border">
+                      <div class="special-heading-inner-border" style="border-color:#fff"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="features"
+           class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll  avia-builder-el-31  el_after_av_section  el_before_av_section   container_wrap fullsize">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><h2 style="text-align: center;">Features</h2>
+                  </div>
+                </section>
+                <div style=" margin-top:0; margin-bottom:30px;"
+                     class="hr hr-custom hr-center hr-icon-no   avia-builder-el-33  el_after_av_textblock  el_before_av_one_half ">
+                  <span class="hr-inner   inner-border-av-border-fat" style=" width:60px; border-color:#738da9;"><span
+                      class="hr-inner-style"></span></span></div>
+                <div class="flex_column_table av-equal-height-column-flextable -flextable">
+                  <div
+                    class="flex_column av_one_half  flex_column_table_cell av-equal-height-column av-align-top first  avia-builder-el-34  el_after_av_hr  el_before_av_one_half  "
+                    style="padding:0 30px 0 30px ; border-radius:5px; ">
+                    <div class="avia-icon-list-container   avia-builder-el-35  avia-builder-el-no-sibling ">
+                      <ul
+                        class="avia-icon-list avia-icon-list-left av-iconlist-small avia_animate_when_almost_visible avia_start_animation">
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Send and
+                                  receive
+                                  encrypted emails using existing systems
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Secure file
+                                  sharing
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline"> Evidence of
+                                  read
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Audit trail
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Delegation
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Bank-grade IT
+                                  security
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Self-service
+                                  portal
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="av-flex-placeholder"></div>
+                  <div
+                    class="flex_column av_one_half  flex_column_table_cell av-equal-height-column av-align-top   avia-builder-el-36  el_after_av_one_half  avia-builder-el-last  "
+                    style="padding:0 30px 0 30px ; border-radius:0; ">
+                    <div class="avia-icon-list-container   avia-builder-el-37  avia-builder-el-no-sibling ">
+                      <ul
+                        class="avia-icon-list avia-icon-list-left av-iconlist-small avia_animate_when_almost_visible avia_start_animation">
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Workflow
+                                  integration
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Connection to
+                                  output management systems
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">
+                                  2-Factor-Authentification
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Fully scalable
+                                  multi-platform packages (desktop, mobile) &amp; volume
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                        <li>
+                          <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                      aria-hidden="true"
+                                                                                      data-av_icon=""
+                                                                                      data-av_iconfont="entypo-fontello"></span>
+                          </div>
+                          <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                   itemtype="https://schema.org/CreativeWork">
+                            <div class="iconlist_content_wrap">
+                              <header class="entry-content-header">
+                                <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Pricing
+                                  packages
+                                  for micro, SMEs and large enterprises
+                                </div>
+                              </header>
+                              <div class="iconlist_content  " itemprop="text"></div>
+                            </div>
+                            <footer class="entry-footer"></footer>
+                          </article>
+                          <div class="iconlist-timeline"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div><!--close column table wrapper. Autoclose: 1 -->
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="av_section_5"
+           class="avia-section alternate_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-38  el_after_av_section  el_before_av_section   container_wrap fullsize"
+           style="background-color: #3a4d5c; ">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <div
+                  class="flex_column av_one_half  flex_column_div av-zero-column-padding first  avia-builder-el-39  el_before_av_one_half  avia-builder-el-first  "
+                  style="border-radius:0px; ">
+                  <section class="av_textblock_section " itemscope="itemscope"
+                           itemtype="https://schema.org/CreativeWork">
+                    <div class="avia_textblock  " itemprop="text"><h4 style="text-align: center;">Need more
+                        information?<br>
+                        We are here to help!</h4>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="flex_column av_one_half  flex_column_div av-zero-column-padding   avia-builder-el-41  el_after_av_one_half  avia-builder-el-last  "
+                  style="border-radius:0px; ">
+                  <div class="avia-icon-list-container   avia-builder-el-42  avia-builder-el-no-sibling ">
+                    <ul
+                      class="avia-icon-list avia-icon-list-left av-iconlist-small avia_animate_when_almost_visible avia_start_animation">
+                      <li>
+                        <div style="font-size:24px; " class="iconlist_icon  avia-font-entypo-fontello"><span
+                            class="iconlist-char " aria-hidden="true" data-av_icon=""
+                            data-av_iconfont="entypo-fontello"></span></div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline"
+                                   style="font-size:24px; ">+352 20600900-10
+                              </div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                      <li>
+                        <div style="font-size:24px; " class="iconlist_icon  avia-font-entypo-fontello"><span
+                            class="iconlist-char " aria-hidden="true" data-av_icon=""
+                            data-av_iconfont="entypo-fontello"></span></div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline"
+                                   style="font-size:24px; "><a href="mailto:enquiries@secourriel.com">enquiries@secourriel.com</a>
+                              </div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="benefits"
+           class="avia-section main_color avia-section-default avia-no-shadow avia-bg-style-scroll  avia-builder-el-43  el_after_av_section  el_before_av_layout_row   container_wrap fullsize">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><h2 style="text-align: center;">Benefits</h2>
+                  </div>
+                </section>
+                <div style=" margin-top:0; margin-bottom:30px;"
+                     class="hr hr-custom hr-center hr-icon-no   avia-builder-el-45  el_after_av_textblock  el_before_av_one_half ">
+                  <span class="hr-inner   inner-border-av-border-fat" style=" width:60px; border-color:#738da9;"><span
+                      class="hr-inner-style"></span></span></div>
+                <div
+                  class="flex_column av_one_half  flex_column_div av-zero-column-padding first  avia-builder-el-46  el_after_av_hr  el_before_av_one_half  "
+                  style="border-radius:0px; ">
+                  <div class="avia-icon-list-container   avia-builder-el-47  avia-builder-el-no-sibling ">
+                    <ul
+                      class="avia-icon-list avia-icon-list-left av-iconlist-small avia_animate_when_almost_visible avia_start_animation">
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">End-to-End
+                                encryption
+                              </div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">GDPR-compliant
+                              </div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">
+                                Indisputability<br><small>Audit trail, Evidence of read</small></div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Tier 4 data
+                                centres in Luxembourg <br><small>PFS certified by CSSF</small></div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Multi-language
+                                support <br><small>(EN, FR, DE, CN)</small></div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="flex_column av_one_half  flex_column_div av-zero-column-padding   avia-builder-el-48  el_after_av_one_half  avia-builder-el-last  "
+                  style="border-radius:0px; ">
+                  <div class="avia-icon-list-container   avia-builder-el-49  avia-builder-el-no-sibling ">
+                    <ul
+                      class="avia-icon-list avia-icon-list-left av-iconlist-small avia_animate_when_almost_visible avia_start_animation">
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Rich corporate
+                                functionalities<br><small>(delegation, groups, self-service portal,…)</small></div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Privacy by
+                                design
+                              </div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Easy to use and
+                                easy to set up
+                              </div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Leveraging of
+                                existing infrastructure
+                              </div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                      <li>
+                        <div class="iconlist_icon  avia-font-entypo-fontello"><span class="iconlist-char "
+                                                                                    aria-hidden="true" data-av_icon=""
+                                                                                    data-av_iconfont="entypo-fontello"></span>
+                        </div>
+                        <article class="article-icon-entry av-iconlist-empty" itemscope="itemscope"
+                                 itemtype="https://schema.org/CreativeWork">
+                          <div class="iconlist_content_wrap">
+                            <header class="entry-content-header">
+                              <div class="av_iconlist_title iconlist_title_small  " itemprop="headline">Major operating
+                                systems
+                              </div>
+                            </header>
+                            <div class="iconlist_content  " itemprop="text"></div>
+                          </div>
+                          <footer class="entry-footer"></footer>
+                        </article>
+                        <div class="iconlist-timeline"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="industries"
+           class="av-layout-grid-container entry-content-wrapper alternate_color av-flex-cells    avia-builder-el-50  el_after_av_section  el_before_av_section  submenu-not-first container_wrap fullsize">
+        <div
+          class="flex_cell no_margin av_one_half  avia-builder-el-51  el_before_av_cell_one_half  avia-builder-el-first   "
+          style="vertical-align:top; padding:70px 50px 50px 50px ; ">
+          <div class="flex_cell_inner">
+            <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+              <div class="avia_textblock  " itemprop="text"><h2>Use cases – Sectors</h2>
+                <ul>
+                  <li>Finance<br>
+                    <small>(Banks, Insurance, Family Offices, Asset Managers)</small></li>
+                  <li>Professional Services<br>
+                    <small> (Law, Tax, Accounting, Consulting)</small></li>
+                  <li>Health<br>
+                    <small>(Rescue, Treatment, Research, Assistance, Health Insurance)</small></li>
+                  <li>Logistics</li>
+                  <li>Any other industry with a need for highly secure electronic communication</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div
+          class="flex_cell no_margin av_one_half  avia-builder-el-53  el_after_av_cell_one_half  avia-builder-el-last   avia-full-stretch av-hide-on-mobile  "
+          style="background-image:url(https://w3.secourriel.com/wp-content/uploads/2017/04/secourriel-secure-messaging-platform.jpg); background-position:top center; background-repeat:no-repeat; background-attachment:scroll; vertical-align:top; ">
+          <div class="flex_cell_inner">
+          </div>
+        </div>
+      </div>
+      <div id="av_section_7"
+           class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-54  el_after_av_layout_row  el_before_av_section   container_wrap fullsize"
+           style="background-color: #6786a1; ">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <div class="avia-button-wrap avia-button-center  avia-builder-el-55  avia-builder-el-no-sibling "><a
+                    href="https://regify.secourriel.com/phpLogin.php?lg=EN"
+                    class="avia-button   avia-icon_select-yes-right-icon avia-color-light avia-size-large avia-position-center "
+                    target="_blank"><span class="avia_iconbox_title">LOGIN / SIGN UP</span><span
+                      class="avia_button_icon avia_button_icon_right" aria-hidden="true" data-av_icon=""
+                      data-av_iconfont="entypo-fontello"></span></a></div>
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="team"
+           class="avia-section main_color avia-section-large avia-no-border-styling avia-bg-style-scroll  avia-builder-el-56  el_after_av_section  el_before_av_section   container_wrap fullsize"
+           style="background-color: #f3f3f3; ">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><h2 style="text-align: center;">Our team</h2>
+                  </div>
+                </section>
+                <div style=" margin-top:0; margin-bottom:30px;"
+                     class="hr hr-custom hr-center hr-icon-no   avia-builder-el-58  el_after_av_textblock  el_before_av_one_third ">
+                  <span class="hr-inner   inner-border-av-border-fat" style=" width:60px; border-color:#738da9;"><span
+                      class="hr-inner-style"></span></span></div>
+                <div
+                  class="flex_column av_one_third  flex_column_div av-zero-column-padding first  avia-builder-el-59  el_after_av_hr  el_before_av_one_third  "
+                  style="border-radius:0px; ">
+                  <section class="avia-team-member   avia-builder-el-60  avia-builder-el-no-sibling "
+                           itemscope="itemscope" itemtype="https://schema.org/Person">
+                    <div class="team-img-container"><img class="avia_image avia_image_team"
+                                                         src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/jorg.jpg"
+                                                         alt="Jorg Reinking" itemprop="image"></div>
+                    <h3 class="team-member-name" itemprop="name">Jorg Reinking</h3>
+                    <div class="team-member-job-title " itemprop="jobTitle">CEO</div>
+                    <div class="team-member-description " itemprop="description"><p>Jorg
+                        is a passionate entrepreneur with 20+ years of experience in the
+                        financial industry and having led various strategy and IT projects.<br>
+                        He has moved from Germany to Luxembourg in 2014 with his business
+                        consulting firm. In 2017 he founded Secourriel, a cybersecurity FinTech.</p>
+                    </div>
+                    <span class="hidden team-member-affiliation" itemprop="affiliation">Secourriel S.A.</span></section>
+                </div>
+                <div
+                  class="flex_column av_one_third  flex_column_div av-zero-column-padding   avia-builder-el-61  el_after_av_one_third  el_before_av_one_third  "
+                  style="border-radius:0px; ">
+                  <section class="avia-team-member   avia-builder-el-62  avia-builder-el-no-sibling "
+                           itemscope="itemscope" itemtype="https://schema.org/Person">
+                    <div class="team-img-container"><img class="avia_image avia_image_team"
+                                                         src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/vlad-1.jpg"
+                                                         alt="Vlad Centea" itemprop="image"></div>
+                    <h3 class="team-member-name" itemprop="name">Vlad Centea</h3>
+                    <div class="team-member-job-title " itemprop="jobTitle">CTO</div>
+                    <div class="team-member-description " itemprop="description"><p>Vlad
+                        is a Senior Project Executive, with 20+years’ experience in IT and 11+
+                        in the financial sector. With an entrepreneurial mindset and results
+                        oriented attitude he managed successfully multi-million strategic
+                        projects/accounts, increasing the gross profit and optimizing the costs.</p>
+                    </div>
+                    <span class="hidden team-member-affiliation" itemprop="affiliation">Secourriel S.A.</span></section>
+                </div>
+                <div
+                  class="flex_column av_one_third  flex_column_div av-zero-column-padding   avia-builder-el-63  el_after_av_one_third  avia-builder-el-last  "
+                  style="border-radius:0px; ">
+                  <section class="avia-team-member   avia-builder-el-64  avia-builder-el-no-sibling "
+                           itemscope="itemscope" itemtype="https://schema.org/Person">
+                    <div class="team-img-container"><img class="avia_image avia_image_team"
+                                                         src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/sarah.jpg"
+                                                         alt="Sarah Halit" itemprop="image"></div>
+                    <h3 class="team-member-name" itemprop="name">Sarah Halit</h3>
+                    <div class="team-member-job-title " itemprop="jobTitle">Business Development</div>
+                    <div class="team-member-description " itemprop="description"><p>Sarah
+                        is ambitious about achieving results and she places great importance on
+                        delivering excellence for clients. She has a successful experience with
+                        growing a start-up and she loves contributing to the development of new
+                        company. In addition, her Master degree in Business Law which gave her a
+                        strong understanding of the legal and regulatory requirement.</p>
+                    </div>
+                    <span class="hidden team-member-affiliation" itemprop="affiliation">Secourriel S.A.</span></section>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="partners"
+           class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-65  el_after_av_section  el_before_av_section   container_wrap fullsize">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><h2 style="text-align: center;">Our partners</h2>
+                  </div>
+                </section>
+                <div style=" margin-top:0; margin-bottom:30px;"
+                     class="hr hr-custom hr-center hr-icon-no   avia-builder-el-67  el_after_av_textblock  el_before_av_partner ">
+                  <span class="hr-inner   inner-border-av-border-fat" style=" width:60px; border-color:#738da9;"><span
+                      class="hr-inner-style"></span></span></div>
+                <div data-autoplay="true" data-interval="10" data-animation="slide"
+                     class="avia-logo-element-container avia-logo-slider avia-content-slider avia-smallarrow-slider avia-content-slider-active noHover avia-content-slider1 avia-content-slider-even avia-builder-el-68 el_after_av_hr avia-builder-el-last">
+                  <div class="avia-smallarrow-slider-heading  no-logo-slider-heading ">
+                    <div class="new-special-heading">&nbsp;</div>
+                    <div class="avia-slideshow-arrows avia-slideshow-controls"><a href="#prev" class="prev-slide"
+                                                                                  aria-hidden="true" data-av_icon=""
+                                                                                  data-av_iconfont="entypo-fontello">Previous</a><a
+                        href="#next" class="next-slide" aria-hidden="true" data-av_icon=""
+                        data-av_iconfont="entypo-fontello">Next</a></div>
+                  </div>
+                  <div class="avia-content-slider-inner"
+                       style="padding: 0px; height: 168px; transition: none 0s ease 0s; transform: translateZ(0px);">
+                    <div class="slide-entry-wrap" itemprop="ImageObject" itemscope="itemscope"
+                         itemtype="https://schema.org/ImageObject"
+                         style="visibility: hidden; opacity: 1; transition: none 0s ease 0s; transform: translate3d(-897px, 0px, 0px); z-index: 4; left: 0px; top: 0px;">
+                      <div
+                        class="slide-entry flex_column no_margin post-entry slide-entry-overview slide-loop-1 slide-parity-odd  av_one_fourth first real-thumbnail">
+                        <a href="https://www.abbl.lu/" data-rel="slide-1" class="slide-image" title=""
+                           target="_blank"><img itemprop="thumbnailUrl" width="400" height="300"
+                                                src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/abbl.jpg"
+                                                class="attachment-no scaling size-no scaling" alt="" loading="lazy"
+                                                srcset="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/abbl.jpg 400w, Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/abbl-300x225.jpg 300w"
+                                                sizes="(max-width: 400px) 100vw, 400px" style="left: 0px;"></a></div>
+                      <div
+                        class="slide-entry flex_column no_margin post-entry slide-entry-overview slide-loop-2 slide-parity-even  av_one_fourth  real-thumbnail">
+                        <a href="http://www.alfi.lu/" data-rel="slide-1" class="slide-image" title=""
+                           target="_blank"><img itemprop="thumbnailUrl" width="400" height="300"
+                                                src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/alfi-logo.png"
+                                                class="attachment-no scaling size-no scaling" alt="" loading="lazy"
+                                                srcset="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/alfi-logo.png 400w, Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/alfi-logo-300x225.png 300w"
+                                                sizes="(max-width: 400px) 100vw, 400px" style="left: 0px;"></a></div>
+                      <div
+                        class="slide-entry flex_column no_margin post-entry slide-entry-overview slide-loop-3 slide-parity-odd  av_one_fourth  real-thumbnail">
+                        <a href="https://ibf.lu/" data-rel="slide-1" class="slide-image" title="" target="_blank"><img
+                            itemprop="thumbnailUrl" width="400" height="300"
+                            src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/ibf.png"
+                            class="attachment-no scaling size-no scaling" alt="" loading="lazy"
+                            srcset="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/ibf.png 400w, Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/ibf-300x225.png 300w"
+                            sizes="(max-width: 400px) 100vw, 400px" style="left: 0px;"></a></div>
+                      <div
+                        class="slide-entry flex_column no_margin post-entry slide-entry-overview slide-loop-4 slide-parity-even  av_one_fourth  real-thumbnail">
+                        <a href="https://www.telindus.lu/" data-rel="slide-1" class="slide-image" title=""
+                           target="_blank"><img itemprop="thumbnailUrl" width="400" height="300"
+                                                src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/telindus.png"
+                                                class="attachment-no scaling size-no scaling" alt="" loading="lazy"
+                                                srcset="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/telindus.png 400w, Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/telindus-300x225.png 300w"
+                                                sizes="(max-width: 400px) 100vw, 400px" style="left: 0px;"></a></div>
+                    </div>
+                    <div class="slide-entry-wrap" itemprop="ImageObject" itemscope="itemscope"
+                         itemtype="https://schema.org/ImageObject"
+                         style="visibility: hidden; z-index: 4; opacity: 1; left: 0px; top: 0px; transform: translate3d(-897px, 0px, 0px); transition: none 0s ease 0s;">
+                      <div
+                        class="slide-entry flex_column no_margin post-entry slide-entry-overview slide-loop-5 slide-parity-odd  av_one_fourth first real-thumbnail">
+                        <a href="https://www.incert.lu/" data-rel="slide-1" class="slide-image" title=""
+                           target="_blank"><img itemprop="thumbnailUrl" width="400" height="300"
+                                                src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/incert.png"
+                                                class="attachment-no scaling size-no scaling" alt="" loading="lazy"
+                                                srcset="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/incert.png 400w, Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/incert-300x225.png 300w"
+                                                sizes="(max-width: 400px) 100vw, 400px" style="left: 0px;"></a></div>
+                      <div
+                        class="slide-entry flex_column no_margin post-entry slide-entry-overview slide-loop-6 slide-parity-even  av_one_fourth  real-thumbnail">
+                        <a href="https://www.regify.com/index.php?PageID=pressDownloads&amp;language=EN"
+                           data-rel="slide-1" class="slide-image" title="" target="_blank"><img itemprop="thumbnailUrl"
+                                                                                                width="400" height="300"
+                                                                                                src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/regify-logo.png"
+                                                                                                class="attachment-no scaling size-no scaling"
+                                                                                                alt="" loading="lazy"
+                                                                                                srcset="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/regify-logo.png 400w, Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/regify-logo-300x225.png 300w"
+                                                                                                sizes="(max-width: 400px) 100vw, 400px"
+                                                                                                style="left: 0px;"></a>
+                      </div>
+                      <div
+                        class="slide-entry flex_column no_margin post-entry slide-entry-overview slide-loop-7 slide-parity-odd  av_one_fourth  real-thumbnail">
+                        <a href="http://dlwi.lu/" data-rel="slide-1" class="slide-image" title="" target="_blank"><img
+                            itemprop="thumbnailUrl" width="400" height="300"
+                            src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/dlwi.png"
+                            class="attachment-no scaling size-no scaling" alt="" loading="lazy"
+                            srcset="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/dlwi.png 400w, Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/dlwi-300x225.png 300w"
+                            sizes="(max-width: 400px) 100vw, 400px" style="left: 0px;"></a></div>
+                      <div
+                        class="slide-entry flex_column no_margin post-entry slide-entry-overview slide-loop-8 slide-parity-even  av_one_fourth  real-thumbnail">
+                        <a href="http://www.lhoft.com/" data-rel="slide-1" class="slide-image" title="" target="_blank"><img
+                            itemprop="thumbnailUrl" width="400" height="300"
+                            src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/lhoft.png"
+                            class="attachment-no scaling size-no scaling" alt="" loading="lazy"
+                            srcset="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/lhoft.png 400w, Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/lhoft-300x225.png 300w"
+                            sizes="(max-width: 400px) 100vw, 400px" style="left: 0px;"></a></div>
+                    </div>
+                    <div class="slide-entry-wrap active-slide" itemprop="ImageObject" itemscope="itemscope"
+                         itemtype="https://schema.org/ImageObject"
+                         style="visibility: visible; z-index: 4; opacity: 1; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px); transition: none 0s ease 0s;">
+                      <div
+                        class="slide-entry flex_column no_margin post-entry slide-entry-overview slide-loop-9 slide-parity-odd  post-entry-last  av_one_fourth first real-thumbnail">
+                        <a href="https://www.securitymadein.lu/" data-rel="slide-1" class="slide-image" title=""
+                           target="_blank"><img itemprop="thumbnailUrl" width="400" height="300"
+                                                src="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/security-made-in-lu.png"
+                                                class="attachment-no scaling size-no scaling" alt="" loading="lazy"
+                                                srcset="Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/security-made-in-lu.png 400w, Secourriel%20S.A.%20%E2%80%93%20Contract%20Ready%20Secure%20Messaging_files/security-made-in-lu-300x225.png 300w"
+                                                sizes="(max-width: 400px) 100vw, 400px" style="left: 0px;"></a></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="news"
+           class="avia-section main_color avia-section-default avia-no-border-styling avia-bg-style-scroll  avia-builder-el-69  el_after_av_section  el_before_av_section   container_wrap fullsize"
+           style="background-color: #f3f3f3; ">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><h2 style="text-align: center;">What is the news?</h2>
+                  </div>
+                </section>
+                <div style=" margin-top:0; margin-bottom:30px;"
+                     class="hr hr-custom hr-center hr-icon-no   avia-builder-el-71  el_after_av_textblock  el_before_av_textblock ">
+                  <span class="hr-inner   inner-border-av-border-fat" style=" width:60px; border-color:#738da9;"><span
+                      class="hr-inner-style"></span></span></div>
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><h2></h2>
+                    <h2>2018</h2>
+                    <p><span id="result_box" class="" lang="en"><span class="">Secourriel highlighted in the cybersecurity category of the Luxembourgish fintech map:<strong>&nbsp;<a
+                              href="http://www.lhoft.com/en/insights/the-luxembourg-fintech-map" target="_blank"
+                              rel="noopener">The LHoFT – 1 March 2018</a></strong></span></span>
+                    </p>
+                    <p><span id="result_box" class="short_text" lang="en"><span class="">Secourriel listed among the regtech of luxembourg:&nbsp;</span></span><strong><span
+                          id="result_box" lang="en"><a
+                            href="http://delano.lu/d/detail/news/how-many-regtech-startups-luxembourg/168713"
+                            target="_blank" rel="noopener">Delano – 5 February 2018</a></span></strong></p>
+                    <p>Secourriel était au Forum FinTech à Paris : <a
+                        href="https://w3.secourriel.com/wp-content/uploads/2018/02/01_02_2018_w_10_aa588d35d6.pdf"
+                        target="_blank" rel="noopener"><strong> Luxemburger Wort -1 February 2018&nbsp;</strong></a></p>
+                    <p>Extrait de l’interview avec Secourriel :<strong> <a
+                          href="https://w3.secourriel.com/wp-content/uploads/2018/03/Extrait-interview-Secourriel-Luxemburger-Wort.pdf"
+                          target="_blank" rel="noopener"> Luxemburger Wort -1 February 2018&nbsp;</a><br>
+                      </strong></p>
+                    <p>Financial Technology Ecosystem keys challenges interview:&nbsp;<a
+                        href="http://www.lhoft.com/en/insights/the-innovators-a-conversation-with-jorg-reinking-ceo-of-secourriel"
+                        target="_blank" rel="noopener"><strong>The LHoFT – 15 January 2018</strong></a></p>
+                    <p><span id="result_box" class="" lang="en"><span class="">Referenced within the Luxembourgish major source for cybersecurity</span></span>:&nbsp;<a
+                        href="https://www.securitymadein.lu/de/ecosystem/company/secourriel/" target="_blank"
+                        rel="noopener"><strong>Securitymadein – 2018</strong></a></p>
+                    <h2>2017</h2>
+                    <p><span id="result_box" class="" lang="en"><span class="">Secourriel is now connected with members of the financial sector:</span></span>
+                      <a href="http://paperjam.lu/communique/6-firms-joined-abbls-fintech-service-pack" target="_blank"
+                         rel="noopener"><strong>Paperjam – December 14, 2017</strong> </a></p>
+                    <p>Secourriel listed in the biggest association FinTech Map:&nbsp;<a
+                        href="https://www.fintechmap.lu/post_type_member/secourriel-s-a/" target="_blank"
+                        rel="noopener"><strong>ABBL – December 2017</strong></a></p>
+                    <p>Why did I create Secourriel:<strong>&nbsp;</strong><a
+                        href="https://www.crunchtime.lu/jorg-reinking" target="_blank" rel="noopener"><strong>Crunchtime
+                          –
+                          2017</strong></a></p>
+                  </div>
+                </section>
+
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="contact"
+           class="avia-section alternate_color avia-section-large avia-no-border-styling avia-bg-style-scroll  avia-builder-el-73  el_after_av_section  el_before_av_section   container_wrap fullsize"
+           style="background-color: #3a4d5c; ">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <div class="flex_column_table av-equal-height-column-flextable -flextable">
+                  <div
+                    class="flex_column av_one_half  no_margin flex_column_table_cell av-equal-height-column av-align-middle av-zero-column-padding first  avia-builder-el-74  el_before_av_one_half  avia-builder-el-first  "
+                    style="border-radius:0px; ">
+                    <section class="av_textblock_section " itemscope="itemscope"
+                             itemtype="https://schema.org/CreativeWork">
+                      <div class="avia_textblock  av_inherit_color " style="color:#fff; " itemprop="text"><h3><span
+                            style="color: #fff;">Secourriel S.A.</span></h3>
+                        <p>29, bd Grande-Duchesse Charlotte<br>
+                          L-1331 Luxembourg</p>
+                        <p><strong>• &nbsp;Enquiries and general contact:</strong></p>
+                        <p><a href="mailto:enquiries@secourriel.com">enquiries@secourriel.com</a></p>
+                        <p><strong>• &nbsp;Technical support:</strong></p>
+                        <p><a href="mailto:support@secourriel.com">support@secourriel.com</a></p>
+                        <p><strong>• &nbsp;Phone:</strong></p>
+                        <p>+352 20600900-10</p>
+                        <span
+                          class="av_font_icon avia_animate_when_visible av-icon-style- av-no-color avia-icon-pos-left avia_start_animation avia_start_delayed_animation"
+                          style=""><a href="https://www.linkedin.com/company/secourriel/" target="_blank"
+                                      class="av-icon-char" style="font-size:40px;line-height:40px;" aria-hidden="true"
+                                      data-av_icon="" data-av_iconfont="entypo-fontello"></a></span>
+                      </div>
+                    </section>
+                  </div>
+                  <div
+                    class="flex_column av_one_half  no_margin flex_column_table_cell av-equal-height-column av-align-middle av-zero-column-padding   avia-builder-el-77  el_after_av_one_half  avia-builder-el-last  "
+                    style="background-color:#3a4d5c; border-radius:0px; "></div>
+                </div><!--close column table wrapper. Autoclose: 1 --></div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div id="av_section_12"
+           class="avia-section alternate_color avia-section-large avia-no-border-styling avia-bg-style-scroll  avia-builder-el-78  el_after_av_section  el_before_av_image_hotspot   container_wrap fullsize"
+           style="background-color: #2a3944; ">
+        <div class="container">
+          <div class="template-page content  av-content-full alpha units">
+            <div class="post-entry post-entry-type-page post-entry-1040">
+              <div class="entry-content-wrapper clearfix">
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  " itemprop="text"><h2 style="text-align: center;">Legal notice</h2>
+                  </div>
+                </section>
+                <div style=" margin-top:0; margin-bottom:30px;"
+                     class="hr hr-custom hr-center hr-icon-no   avia-builder-el-80  el_after_av_textblock  el_before_av_textblock ">
+                  <span class="hr-inner   inner-border-av-border-fat" style=" width:60px; border-color:#738da9;"><span
+                      class="hr-inner-style"></span></span></div>
+                <section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                  <div class="avia_textblock  av_inherit_color " style="color:#fff; " itemprop="text">
+                    <div style="font-size: 16px;">
+                      <p>Secourriel S.A. is a stock corporation (société anonyme) incorporated
+                        under the laws of the Grand Duchy of Luxembourg with principal office
+                        in Luxembourg city/Grand Duchy of Luxembourg.</p>
+                      <p>It is registered with the chamber of commerce (‘Registre de Commerce
+                        et des Sociétés’, RCS) in Luxembourg under No B213302 and licensed by
+                        the Ministry of Economic Affairs (Autorisation d’établissement de
+                        Ministère de l’Économie) under No 10076647/1. The national value added
+                        tax identification number is LU29251157.</p>
+                      <p>The Management Board and Chairman of the supervisory board is Jorg Reinking (Founder and
+                        CEO).</p>
+                    </div>
+                  </div>
+                </section>
+                <p></p>
+              </div>
+            </div>
+          </div><!-- close content main div --></div>
+      </div>
+      <div
+        class="main_color av-fullwidth-hotspots  avia-builder-el-82  el_after_av_section  avia-builder-el-last   container_wrap fullsize"></div>
+      <div>
+        <div></div><!--end builder template--></div><!-- close default .container_wrap element -->
+
+
+
+
+
+      <footer class="container_wrap socket_color" id="socket" role="contentinfo" itemscope="itemscope"
+              itemtype="https://schema.org/WPFooter">
+        <div class="container">
+
+          <span class="copyright">© Copyright 2018 - Secourriel S.A.</span>
+
+          <ul class="noLightbox social_bookmarks icon_count_1">
+            <li class="social_bookmarks_linkedin av-social-link-linkedin social_icon_1"><a target="_blank"
+                                                                                           href="https://www.linkedin.com/company/secourriel/"
+                                                                                           aria-hidden="true"
+                                                                                           data-av_icon=""
+                                                                                           data-av_iconfont="entypo-fontello"
+                                                                                           title="Linkedin"><span
+                  class="avia_hidden_link_text">Linkedin</span></a></li>
+          </ul>
+        </div>
+
+        <!-- ####### END SOCKET CONTAINER ####### -->
+      </footer>
+
+
+      <!-- end main -->
+    </div>
+
+    <!-- end wrap_all --></div>
+
+</div>{# /.layout-container #}

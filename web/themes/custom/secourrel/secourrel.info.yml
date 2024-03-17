@@ -1,0 +1,26 @@
+name: secourrel
+type: theme
+'base theme': stable9
+starterkit: true
+version: VERSION
+regions:
+  content: Content
+  header: Header
+libraries:
+  - secourrel/base
+  - secourrel/messages
+  - secourrel/main
+libraries-extend:
+  user/drupal.user:
+    - secourrel/user
+  core/drupal.dropbutton:
+    - secourrel/dropbutton
+  core/drupal.dialog:
+    - secourrel/dialog
+  file/drupal.file:
+    - secourrel/file
+  core/drupal.progress:
+    - secourrel/progress
+logo: 'logo.png'
+core_version_requirement: ^10
+generator: 'starterkit_theme:10.2.4'
