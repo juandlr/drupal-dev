@@ -2,7 +2,9 @@
 
 namespace Drupal\hello_world\Controller;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\hello_world\HelloWorldSalutation;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -47,4 +49,11 @@ class HelloWorldController extends ControllerBase {
     return $this->salutation->getSalutationComponent();
   }
 
+  /**
+   * Handles the access checking.
+   */
+  public function access(AccountInterface $account) {
+    return in_array('editor', $account->getRoles()) ?
+      AccessResult::forbidden() : AccessResult::allowed();
+  }
 }
