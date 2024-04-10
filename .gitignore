@@ -3,3 +3,5 @@
 /.idea/commandlinetools
 /.idea
 /web/sites/default/files
+/web/sites/default/settings.local.php
+/web/sites/default/settings.php
