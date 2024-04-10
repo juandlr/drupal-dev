@@ -87,4 +87,12 @@ class JsonImporter extends ImporterBase {
     $product->save();
   }
 
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getConfig() {
+    return $this->configuration['config'];
+  }
+
 }

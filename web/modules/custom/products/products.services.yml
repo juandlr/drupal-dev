@@ -3,4 +3,3 @@ services:
     class: Drupal\products\Plugin\ImporterManager
     parent: default_plugin_manager
     arguments: ['@entity_type.manager']
-

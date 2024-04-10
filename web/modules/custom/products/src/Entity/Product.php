@@ -71,6 +71,7 @@ class Product extends ContentEntityBase implements ProductInterface {
    */
   public function setName($name) {
     $this->set('name', $name);
+
     return $this;
   }
 
@@ -86,6 +87,7 @@ class Product extends ContentEntityBase implements ProductInterface {
    */
   public function setProductNumber($number) {
     $this->set('number', $number);
+
     return $this;
   }
 
@@ -101,6 +103,7 @@ class Product extends ContentEntityBase implements ProductInterface {
    */
   public function setRemoteId($id) {
     $this->set('remote_id', $id);
+
     return $this;
   }
 
@@ -116,6 +119,7 @@ class Product extends ContentEntityBase implements ProductInterface {
    */
   public function setSource($source) {
     $this->set('source', $source);
+
     return $this;
   }
 
@@ -131,13 +135,15 @@ class Product extends ContentEntityBase implements ProductInterface {
    */
   public function setCreatedTime($timestamp) {
     $this->set('created', $timestamp);
+
     return $this;
   }
 
   /**
    * {@inheritdoc}
    */
-  public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
+  public static function baseFieldDefinitions(EntityTypeInterface $entity_type
+  ) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
     $fields['name'] = BaseFieldDefinition::create('string')
@@ -213,6 +219,6 @@ class Product extends ContentEntityBase implements ProductInterface {
    */
   public function getBundle() {
     return $this->bundle;
-}
+  }
 
 }

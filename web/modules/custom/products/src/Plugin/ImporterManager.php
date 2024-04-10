@@ -49,9 +49,9 @@ class ImporterManager extends DefaultPluginManager {
     $this->alterInfo('products_importer_info');
     $this->setCacheBackend(
       $cache_backend,
-      'products_importer_plugins',
-      $this->entityTypeManager = $entityTypeManager,
+      'products_importer_plugins'
     );
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
@@ -60,8 +60,9 @@ class ImporterManager extends DefaultPluginManager {
    * @param string $id
    *   The ID of the config.
    *
-   * @return \Drupal\products\Plugin\ImporterPluginInterface|null
+   * @return object|null
    *   The plugin instance.
+   * @throws \Drupal\Component\Plugin\Exception\PluginException
    */
   public function createInstanceFromConfig($id) {
     $config = $this->entityTypeManager->getStorage('importer')->load($id);

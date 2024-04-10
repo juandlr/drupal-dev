@@ -20,7 +20,7 @@ class ImporterForm extends EntityForm {
    *
    * @var \Drupal\products\Plugin\ImporterManager
    */
-  protected $importerManager;
+  protected ImporterManager $importerManager;
 
   /**
    * ImporterForm constructor.
@@ -33,11 +33,11 @@ class ImporterForm extends EntityForm {
   public function __construct(
     ImporterManager $importerManager,
     MessengerInterface $messenger,
-    EntityTypeManagerInterface $entityTypeManager
+//    EntityTypeManagerInterface $entityTypeManager
   ) {
     $this->importerManager = $importerManager;
     $this->messenger = $messenger;
-    $this->entityTypeManager = $entityTypeManager;
+//    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
@@ -47,7 +47,7 @@ class ImporterForm extends EntityForm {
     return new static(
       $container->get('products.importer_manager'),
       $container->get('messenger'),
-      $container->get('entity_type.manager')
+//      $container->get('entity_type.manager')
     );
   }
 
@@ -134,8 +134,9 @@ class ImporterForm extends EntityForm {
 
   /**
    * {@inheritdoc}
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function save(array $form, FormStateInterface $form_state) {
+  public function save(array $form, FormStateInterface $form_state): void {
     /** @var \Drupal\products\Entity\Importer $importer */
     $importer = $this->entity;
     $status = $importer->save();

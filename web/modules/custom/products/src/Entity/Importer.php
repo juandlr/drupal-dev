@@ -47,6 +47,7 @@ use Drupal\Core\Url;
  * )
  */
 class Importer extends ConfigEntityBase implements ImporterInterface {
+
   /**
    * The Importer ID.
    *
@@ -94,7 +95,7 @@ class Importer extends ConfigEntityBase implements ImporterInterface {
    *
    * @var string
    */
-  protected $bundle;
+  //  protected $bundle;
 
   /**
    * {@inheritdoc}
@@ -130,6 +131,5 @@ class Importer extends ConfigEntityBase implements ImporterInterface {
   public function getBundle() {
     return $this->bundle;
   }
-
 
 }
