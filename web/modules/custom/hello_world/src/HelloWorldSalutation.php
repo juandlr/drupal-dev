@@ -87,6 +87,9 @@ class HelloWorldSalutation {
           ],
         ],
       ],
+      '#cache' => [
+        'max-age' => 0
+      ]
     ];
 
     $config = $this->configFactory->get('hello_world.custom_salutation');
