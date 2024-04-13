@@ -19,7 +19,11 @@
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10.2",
-        "drupal/devel": "^5.0"
+        "drupal/devel": "^5.0",
+        "drupal/eca": "^1.1",
+        "drupal/eca_cm": "^1.0",
+        "drupal/examples": "^4.0",
+        "drupal/webprofiler": "^10.1"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -95,6 +99,7 @@
         }
     },
     "require-dev": {
+        "drupal/core-dev": "^10.2",
         "drush/drush": "^12.4"
     }
 }
