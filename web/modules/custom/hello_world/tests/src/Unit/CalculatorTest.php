@@ -34,18 +34,15 @@ class CalculatorTest extends UnitTestCase {
    * Tests the Calculator::add() method.
    */
   public function testAdd() {
-    $calculator = new Calculator(10, 5);
-    $this->assertEquals(15, $calculator->add());
-    $calculator = new Calculator(10, 6);
-    $this->assertEquals(16, $calculator->add());
+    $this->assertEquals(15, $this->calculatorOne->add());
+    $this->assertEquals(16, $this->calculatorTwo->add());
   }
 
   /**
    * Tests the Calculator::subtract() method.
    */
   public function testSubtract() {
-    $calculator = new Calculator(10, 5);
-    $this->assertEquals(5, $calculator->subtract());
+    $this->assertEquals(5, $this->calculatorOne->subtract());
   }
 
   /**

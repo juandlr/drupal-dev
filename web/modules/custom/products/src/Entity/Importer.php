@@ -95,13 +95,14 @@ class Importer extends ConfigEntityBase implements ImporterInterface {
    *
    * @var string
    */
-  //  protected $bundle;
+    protected $bundle;
 
   /**
    * {@inheritdoc}
    */
   public function getUrl() {
-    return $this->url ? Url::fromUri($this->url) : NULL;
+    var_dump($this->url);
+    return $this->url ?? NULL;
   }
 
   /**
